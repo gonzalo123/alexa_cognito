@@ -1,0 +1,24 @@
+{
+  "name": "hello.alexa.serverless",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "deploy": "serverless deploy --aws-s3-accelerate",
+    "test": "jest --verbose ./tests/*"
+  },
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "jest": "^24.7.1",
+    "serverless": "^1.42.3",
+    "serverless-iam-roles-per-function": "^1.0.4",
+    "serverless-pseudo-parameters": "^2.4.0"
+  },
+  "dependencies": {
+    "ask-sdk": "^2.1.0",
+    "i18next": "^10.5.0",
+    "i18next-sprintf-postprocessor": "^0.2.2",
+    "aws-sdk": "^2.326.0"
+  }
+}

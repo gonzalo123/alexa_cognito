@@ -1,0 +1,31 @@
+service: identity-demo
+
+plugins:
+  - serverless-pseudo-parameters
+  - serverless-iam-roles-per-function
+
+provider:
+  name: aws
+  runtime: nodejs8.10
+  region: ${opt:region, self:custom.defaultRegion}
+  stage: ${opt:stage, self:custom.defaultStage}
+
+custom:
+  defaultRegion: eu-west-1
+  defaultStage: prod
+  userPoolArn: arn:aws:cognito-idp:my_cognito_idp
+
+functions:
+  info:
+    handler: src/index.handler
+    events:
+      - alexaSkill: amzn1.ask.skill.my_skill_id
+    iamRoleStatements:
+      - Action:
+          - cognito-idp:GetUser
+        Resource: '*'
+        Effect: Allow
+    environment:
+      COGNITO_REGION: ${self:provider.region}
+      COGNITO_USERPOOL: ${self:custom.userPoolArn}
+

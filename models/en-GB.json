@@ -1,0 +1,89 @@
+{
+  "interactionModel": {
+    "languageModel": {
+      "invocationName": "identity demo",
+      "intents": [
+        {
+          "name": "AMAZON.CancelIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.HelpIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.StopIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.NavigateHomeIntent",
+          "samples": []
+        },
+        {
+          "name": "HelloWorldIntent",
+          "slots": [],
+          "samples": [
+            "hello"
+          ]
+        },
+        {
+          "name": "RequestInfoIntent",
+          "slots": [
+            {
+              "name": "infoTypeRequested",
+              "type": "infoType"
+            }
+          ],
+          "samples": [
+            "tell me my {infoTypeRequested}",
+            "what is my {infoTypeRequested}",
+            "give me my {infoTypeRequested}",
+            "{infoTypeRequested}",
+            "what is {infoTypeRequested}",
+            "what's {infoTypeRequested}",
+            "what's my {infoTypeRequested}",
+            "get me {infoTypeRequested}",
+            "give me {infoTypeRequested}",
+            "provide {infoTypeRequested}",
+            "what are {infoTypeRequested}",
+            "tell me {infoTypeRequested}"
+          ]
+        }
+      ],
+      "types": [
+        {
+          "name": "infoType",
+          "values": [
+            {
+              "id": "userName",
+              "name": {
+                "value": "user name",
+                "synonyms": [
+                  "user id",
+                  "userid",
+                  "id",
+                  "user name"
+                ]
+              }
+            },
+            {
+              "id": "emailAddress",
+              "name": {
+                "value": "email address",
+                "synonyms": [
+                  "email",
+                  "email account",
+                  "a. o. l. account",
+                  "g. mail",
+                  "electronic message",
+                  "electronic mail address",
+                  "online address"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    }
+  }
+}
